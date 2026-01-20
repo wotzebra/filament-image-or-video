@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\FilamentImageOrVideo\Filament\Components;
+namespace Wotz\FilamentImageOrVideo\Filament\Components;
 
 use Filament\Forms;
 use Filament\Infolists\Components\TextEntry;

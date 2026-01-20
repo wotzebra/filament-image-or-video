@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\FilamentImageOrVideo\Filament\Components;
+namespace Wotz\FilamentImageOrVideo\Filament\Components;
 
-use Codedor\MediaLibrary\Filament\AttachmentInput;
+use Wotz\MediaLibrary\Filament\AttachmentInput;
 use Filament\Forms\Components\Select;
 
 class ImageOrVideoUrl
