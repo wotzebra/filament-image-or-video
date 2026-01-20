@@ -1,10 +1,10 @@
 <?php
 
-namespace Codedor\FilamentImageOrVideo\Tests;
+namespace Wotz\FilamentImageOrVideo\Tests;
 
-use Codedor\FilamentImageOrVideo\Providers\FilamentImageOrVideoServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Wotz\FilamentImageOrVideo\Providers\FilamentImageOrVideoServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Codedor\\FilamentImageOrVideo\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'Wotz\\FilamentImageOrVideo\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 

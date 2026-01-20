@@ -1,46 +1,47 @@
 {
-    "name": "codedor/filament-image-or-video",
+    "name": "wotz/filament-image-or-video",
     "description": "Package to embed an image or youtube/vimeo as a Filament field",
     "keywords": [
-        "codedor",
+        "who owns the zebra",
         "laravel",
         "filament-image-or-video"
     ],
-    "homepage": "https://github.com/codedor/filament-image-or-video",
+    "homepage": "https://github.com/wotzebra/filament-image-or-video",
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "codedor/filament-media-library": "^2.1|^3.0",
-        "filament/forms": "^3.2",
+        "filament/forms": "^4.0|^5.0",
         "illuminate/contracts": "^10.0|^11.0|^12.0",
-        "spatie/laravel-package-tools": "^1.12"
+        "spatie/laravel-package-tools": "^1.12",
+        "wotz/filament-media-library": "^4.0"
     },
     "require-dev": {
+        "filament/upgrade": "^4.0",
+        "larastan/larastan": "^2.0|^3.0",
         "laravel/pint": "^1.0",
         "nunomaduro/collision": "^7.0|^8.0",
-        "larastan/larastan": "^2.0|^3.0",
         "orchestra/testbench": "^8.0|^9.0|^10.0",
-        "pestphp/pest": "^2.0|^3.0",
-        "pestphp/pest-plugin-laravel": "^2.0|^3.0",
+        "pestphp/pest": "^2.0|^3.0|^4.0",
+        "pestphp/pest-plugin-laravel": "^2.0|^3.0|^4.0",
         "phpstan/extension-installer": "^1.1|^2.0",
         "phpstan/phpstan-deprecation-rules": "^1.0|^2.0",
         "phpstan/phpstan-phpunit": "^1.0|^2.0"
     },
     "autoload": {
         "psr-4": {
-            "Codedor\\FilamentImageOrVideo\\": "src",
-            "Codedor\\FilamentImageOrVideo\\Database\\Factories\\": "database/factories"
+            "Wotz\\FilamentImageOrVideo\\": "src",
+            "Wotz\\FilamentImageOrVideo\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Codedor\\FilamentImageOrVideo\\Tests\\": "tests"
+            "Wotz\\FilamentImageOrVideo\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Codedor\\FilamentImageOrVideo\\Providers\\FilamentImageOrVideoServiceProvider"
+                "Wotz\\FilamentImageOrVideo\\Providers\\FilamentImageOrVideoServiceProvider"
             ]
         }
     },
