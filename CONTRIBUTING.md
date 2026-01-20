@@ -40,12 +40,8 @@ Some things that will increase the chance that your pull request is accepted:
 Some things to consider before submitting an issue
 
 -   Search the existing issues to see if it already has been asked or reported.
--   If you do find a similar issue, upvote it by adding a 👍 reaction . If you have relevant information to add, do so in a comment. Please don't add a `+1` comment.
+-   If you do find a similar issue, upvote it by adding a reaction . If you have relevant information to add, do so in a comment. Please don't add a `+1` comment.
 -   When making an issue, follow the issue templates and provide as much information as possible, even better try to provide a repository demonstrating the issue.
-
-## Coding style
-
-See our [guidelines](https://guidelines.codedor.be/coding-standards/php).
 
 ### Laravel Pint
 

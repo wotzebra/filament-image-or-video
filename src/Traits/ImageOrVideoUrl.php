@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\FilamentImageOrVideo\Traits;
+namespace Wotz\FilamentImageOrVideo\Traits;
 
-use Codedor\MediaLibrary\Models\Attachment;
+use Wotz\MediaLibrary\Models\Attachment;
 
 trait ImageOrVideoUrl
 {

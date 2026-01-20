@@ -7,7 +7,7 @@ Package to embed an image or youtube/vimeo as a Filament field
 You can install the package via composer:
 
 ```bash
-composer require codedor/filament-image-or-video
+composer require wotz/filament-image-or-video
 ```
 
 Optionally, you can publish the views using
@@ -25,8 +25,8 @@ php artisan vendor:publish --tag="filament-image-or-video-translations"
 ## Usage
 
 ```php
-$filamentImageOrVideo = new Codedor\FilamentImageOrVideo();
-echo $filamentImageOrVideo->echoPhrase('Hello, Codedor!');
+$filamentImageOrVideo = new Wotz\FilamentImageOrVideo();
+echo $filamentImageOrVideo->echoPhrase('Hello, Wotz!');
 ```
 
 ## Documentation
@@ -53,7 +53,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security Vulnerabilities
 
-If you discover any security-related issues, please email info@codedor.be instead of using the issue tracker.
+If you discover any security-related issues, please email info@whoownsthezebra.be instead of using the issue tracker.
 
 ## License
 

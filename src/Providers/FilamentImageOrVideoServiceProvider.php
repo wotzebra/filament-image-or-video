@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\FilamentImageOrVideo\Providers;
+namespace Wotz\FilamentImageOrVideo\Providers;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;

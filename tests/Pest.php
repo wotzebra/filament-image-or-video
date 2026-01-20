@@ -1,5 +1,5 @@
 <?php
 
-use Codedor\FilamentImageOrVideo\Tests\TestCase;
+use Wotz\FilamentImageOrVideo\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
