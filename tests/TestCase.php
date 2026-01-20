@@ -2,9 +2,9 @@
 
 namespace Wotz\FilamentImageOrVideo\Tests;
 
-use Wotz\FilamentImageOrVideo\Providers\FilamentImageOrVideoServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Wotz\FilamentImageOrVideo\Providers\FilamentImageOrVideoServiceProvider;
 
 class TestCase extends Orchestra
 {

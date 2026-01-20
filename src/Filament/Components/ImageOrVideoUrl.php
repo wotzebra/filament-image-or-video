@@ -2,8 +2,8 @@
 
 namespace Wotz\FilamentImageOrVideo\Filament\Components;
 
-use Wotz\MediaLibrary\Filament\AttachmentInput;
 use Filament\Forms\Components\Select;
+use Wotz\MediaLibrary\Filament\AttachmentInput;
 
 class ImageOrVideoUrl
 {
