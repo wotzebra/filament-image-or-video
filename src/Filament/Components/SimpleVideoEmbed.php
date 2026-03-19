@@ -3,16 +3,18 @@
 namespace Wotz\FilamentImageOrVideo\Filament\Components;
 
 use Filament\Forms;
+use Filament\Schemas\Components\Fieldset;
+use Filament\Schemas\Components\Group;
 use Illuminate\Support\Str;
 
 class SimpleVideoEmbed extends VideoEmbed
 {
-    public static function make(string $field = 'video'): \Filament\Schemas\Components\Fieldset
+    public static function make(string $field = 'video'): Fieldset
     {
-        return \Filament\Schemas\Components\Fieldset::make($field)
+        return Fieldset::make($field)
             ->label(fn (): string => Str::of($field)->title())
             ->schema([
-                \Filament\Schemas\Components\Group::make([
+                Group::make([
                     Forms\Components\Hidden::make($field . '.embed_url'),
                     Forms\Components\Hidden::make($field . '.embed_type')
                         ->default('youtube'),

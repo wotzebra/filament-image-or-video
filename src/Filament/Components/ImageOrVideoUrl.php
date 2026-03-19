@@ -3,6 +3,8 @@
 namespace Wotz\FilamentImageOrVideo\Filament\Components;
 
 use Filament\Forms\Components\Select;
+use Filament\Schemas\Components\Group;
+use Filament\Schemas\Components\Utilities\Get;
 use Wotz\MediaLibrary\Filament\AttachmentInput;
 
 class ImageOrVideoUrl
@@ -12,7 +14,7 @@ class ImageOrVideoUrl
         ?array $attachmentFormats = null,
         string $prefix = '',
         bool $noVideo = false
-    ): \Filament\Schemas\Components\Group {
+    ): Group {
         $oembedClass = match ($simpleOembed) {
             true => SimpleVideoEmbed::class,
             false => VideoEmbed::class,
@@ -27,7 +29,7 @@ class ImageOrVideoUrl
             unset($options['video']);
         }
 
-        return \Filament\Schemas\Components\Group::make([
+        return Group::make([
             Select::make($prefix . 'image_or_video')
                 ->label(__('filament-image-or-video::image-or-video.select label'))
                 ->options($options)
@@ -36,13 +38,13 @@ class ImageOrVideoUrl
                 ->reactive(),
 
             $oembedClass::make($prefix . 'video')
-                ->hidden(fn (\Filament\Schemas\Components\Utilities\Get $get) => $get($prefix . 'image_or_video') !== 'video')
+                ->hidden(fn (Get $get) => $get($prefix . 'image_or_video') !== 'video')
                 ->label(__('filament-image-or-video::image-or-video.video option')),
 
             AttachmentInput::make($prefix . 'image_id')
-                ->hidden(fn (\Filament\Schemas\Components\Utilities\Get $get) => ! in_array($get($prefix . 'image_or_video'), ['image', 'video']))
+                ->hidden(fn (Get $get) => ! in_array($get($prefix . 'image_or_video'), ['image', 'video']))
                 ->allowedFormats($attachmentFormats ?? [])
-                ->label(fn (\Filament\Schemas\Components\Utilities\Get $get) => $get($prefix . 'image_or_video') === 'image'
+                ->label(fn (Get $get) => $get($prefix . 'image_or_video') === 'image'
                     ? __('filament-image-or-video::image-or-video.image option')
                     : __('filament-image-or-video::image-or-video.video fallback')
                 ),
