@@ -4,26 +4,31 @@ namespace Wotz\FilamentImageOrVideo\Filament\Components;
 
 use Filament\Forms;
 use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Components\Fieldset;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Group;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Support\Str;
 
 class VideoEmbed
 {
-    public static function make(string $field = 'video'): \Filament\Schemas\Components\Fieldset
+    public static function make(string $field = 'video'): Fieldset
     {
-        return \Filament\Schemas\Components\Fieldset::make($field)
+        return Fieldset::make($field)
             ->label(fn (): string => Str::of($field)->title())
             ->schema([
-                \Filament\Schemas\Components\Group::make([
+                Group::make([
                     Forms\Components\Hidden::make($field . '.embed_url'),
                     Forms\Components\Hidden::make($field . '.embed_type')
                         ->default('youtube')
                         ->formatStateUsing(fn (mixed $state) => $state ?? 'youtube'),
                     static::urlInput($field),
-                    \Filament\Schemas\Components\Fieldset::make('Main options')
+                    Fieldset::make('Main options')
                         ->schema([
-                            \Filament\Schemas\Components\Grid::make(['md' => 2])
+                            Grid::make(['md' => 2])
                                 ->schema([
-                                    \Filament\Schemas\Components\Group::make([
+                                    Group::make([
                                         Forms\Components\Checkbox::make($field . '.loop')
                                             ->default(true)
                                             ->label(fn (): string => __('filament-image-or-video::image-or-video.loop'))
@@ -35,10 +40,10 @@ class VideoEmbed
                                             ->label(fn (): string => __('filament-image-or-video::image-or-video.autoplay'))
                                             ->reactive()
                                             ->formatStateUsing(fn (mixed $state) => $state ?? true)
-                                            ->afterStateUpdated(fn (\Filament\Schemas\Components\Utilities\Set $set, $state) => $set($field . '.mute', $state)),
+                                            ->afterStateUpdated(fn (Set $set, $state) => $set($field . '.mute', $state)),
                                     ]),
 
-                                    \Filament\Schemas\Components\Group::make([
+                                    Group::make([
                                         Forms\Components\Checkbox::make($field . '.controls')
                                             ->default(false)
                                             ->formatStateUsing(fn (mixed $state) => $state ?? false)
@@ -50,11 +55,11 @@ class VideoEmbed
                                             ->formatStateUsing(fn (mixed $state) => $state ?? true)
                                             ->label(fn (): string => __('filament-image-or-video::image-or-video.mute'))
                                             ->reactive()
-                                            ->disabled(fn (\Filament\Schemas\Components\Utilities\Get $get) => $get($field . '.autoplay')),
+                                            ->disabled(fn (Get $get) => $get($field . '.autoplay')),
                                     ]),
 
                                     TextEntry::make('placeholder')
-                                        ->hidden(fn (\Filament\Schemas\Components\Utilities\Get $get) => ! $get($field . '.autoplay'))
+                                        ->hidden(fn (Get $get) => ! $get($field . '.autoplay'))
                                         ->label(fn () => __('filament-image-or-video::image-or-video.video muted description'))
                                         ->columnSpan(2),
                                 ]),
@@ -108,7 +113,7 @@ class VideoEmbed
             ->label(fn (): string => __('filament-image-or-video::image-or-video.url'))
             ->reactive()
             ->lazy()
-            ->afterStateUpdated(function (\Filament\Schemas\Components\Utilities\Set $set, \Filament\Schemas\Components\Utilities\Get $get, $state) use ($field) {
+            ->afterStateUpdated(function (Set $set, Get $get, $state) use ($field) {
                 if ($state) {
                     $embedType = Str::of($state)->contains('vimeo') ? 'vimeo' : 'youtube';
 
