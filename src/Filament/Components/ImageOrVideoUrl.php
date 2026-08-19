@@ -2,16 +2,21 @@
 
 namespace Wotz\FilamentImageOrVideo\Filament\Components;
 
+use Closure;
 use Filament\Forms\Components\Select;
 use Filament\Schemas\Components\Group;
 use Filament\Schemas\Components\Utilities\Get;
 use Wotz\MediaLibrary\Filament\AttachmentInput;
+use Wotz\MediaLibrary\Formats\Format;
 
 class ImageOrVideoUrl
 {
+    /**
+     * @param  array<int, string|Format>|Closure|null  $attachmentFormats
+     */
     public static function make(
         bool $simpleOembed = false,
-        ?array $attachmentFormats = null,
+        null|array|Closure $attachmentFormats = null,
         string $prefix = '',
         bool $noVideo = false
     ): Group {

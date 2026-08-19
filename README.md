@@ -25,9 +25,13 @@ php artisan vendor:publish --tag="filament-image-or-video-translations"
 ## Usage
 
 ```php
-$filamentImageOrVideo = new Wotz\FilamentImageOrVideo();
-echo $filamentImageOrVideo->echoPhrase('Hello, Wotz!');
+use App\Formats\Landscape;
+use Wotz\FilamentImageOrVideo\Filament\Components\ImageOrVideoUrl;
+
+ImageOrVideoUrl::make(attachmentFormats: [Landscape::class]);
 ```
+
+`attachmentFormats` also accepts a closure (`fn (Get $get) => [...]`), see the [documentation](./docs/index.md).
 
 ## Documentation
 
