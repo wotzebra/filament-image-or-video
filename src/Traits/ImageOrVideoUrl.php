@@ -2,7 +2,7 @@
 
 namespace Wotz\FilamentImageOrVideo\Traits;
 
-use Wotz\MediaLibrary\Models\Attachment;
+use Wotz\MediaLibrary\Support\Config;
 
 trait ImageOrVideoUrl
 {
@@ -22,7 +22,7 @@ trait ImageOrVideoUrl
             $data[$prefix . 'image_or_video'] === 'image'
             || ($data[$prefix . 'image_or_video'] === 'video' && ! empty($data[$prefix . 'image_id']))
         ) {
-            $attachment = Attachment::find($data[$prefix . 'image_id']);
+            $attachment = Config::attachmentModel()::find($data[$prefix . 'image_id']);
         }
 
         if ($data[$prefix . 'image_or_video'] === 'video') {
